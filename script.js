@@ -48,13 +48,21 @@ const addingLink = () => {
     }
     linkList.push(newObject);
 }
-if (menuOption !== 0) {
-    switch (menuOption) {
-        case 1:
-            listOptions();
-            break;
-        case 2:
-            addingLink();
-            break;
+const deletedLink = () => {
+    let indexDeleted = Number(
+        prompt(`Enter the lilnk's index to delete (1 to ${linkList.length})`)
+    );
+    let deletedlink = linkList.splice(indexDeleted--, 1);
+    console.log(deletedlink);
+    alert(`You just deleted ${deletedlink[i].title}`);
+}
+while (menuOption !== 0) {
+    if (menuOption === 1) {
+        listOptions();
+    } else if (menuOption === 2) {
+        addingLink();
+    } else if (menuOption === 3) {
+        deletedLink();
     }
+    menuOption = Number(prompt(menuLinks));
 }
