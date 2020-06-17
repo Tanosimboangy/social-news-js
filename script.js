@@ -1,41 +1,60 @@
-linkList = [
+// This is my object which contains all of the list of the links
+let linkList = [
     {
         title: "Facebook",
-        URL: "https://web.facebook.com/",
+        Url: "https://web.facebook.com/",
         author: "Mark",
     },
     {
         title: "Amazon",
-        URL: "https://www.amazon.com/",
+        Url: "https://www.amazon.com/",
         author: "John calmif",
     },
     {
         title: "Twitter",
-        URL: "https://twitter.com/explore",
+        Url: "https://twitter.com/explore",
         author: "David brital",
     },
     {
         title: "Sport",
-        URL: "https://sport.com/",
+        Url: "https://sport.com/",
         author: "Brod Lari",
     },
 ];
-
+// This is the input for the user to enter the option
 let menuLinks = `Choose an option:
 1 : Show links
 2 : Add a link
 3 : Remove a link
 0 : Quit
 `
-let menuOption = prompt(menuLinks);
+let menuOption = Number(prompt(menuLinks));
 
-while (menuOption !== 0) {
-    if (linkList === 1) {
-        for (let i = 0; i < linkList.lenghth; i++) {
-            let menuString = (`Title: ${linkList[i].title} \n URL : ${linkList[i].URL} \n Author : ${linkList[i].author}`);
-            alert (menuString);
-        }
-    } else if (linkList === 2) {
+const listOptions = () => {
+    for (let i = 0; i < linkList.length; i++) {
+        let listOption = `Title: ${linkList[i].title} \n URL : ${linkList[i].Url} \n Author : ${linkList[i].author}`;
+        alert (listOption);
+    }
+}
+const addingLink = () => {
+    const newLinkTitle = prompt("Enter the title of the new link");
+    const newLinkURL = prompt("Enter the URL of the new link");
+    const newLinkauthor = prompt("Enter the author of the new link");
 
+    let newObject = {
+        title: newLinkTitle,
+        URL: newLinkURL,
+        author: newLinkauthor
+    }
+    linkList.push(newObject);
+}
+if (menuOption !== 0) {
+    switch (menuOption) {
+        case 1:
+            listOptions();
+            break;
+        case 2:
+            addingLink();
+            break;
     }
 }
