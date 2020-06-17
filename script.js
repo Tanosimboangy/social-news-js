@@ -43,18 +43,18 @@ const addingLink = () => {
 
     let newObject = {
         title: newLinkTitle,
-        URL: newLinkURL,
+        Url: newLinkURL,
         author: newLinkauthor
     }
+
     linkList.push(newObject);
 }
 const deletedLink = () => {
     let indexDeleted = Number(
-        prompt(`Enter the lilnk's index to delete (1 to ${linkList.length})`)
-    );
+        prompt(`Enter the lilnk's index to delete (1 to ${linkList.length})`));
     let deletedlink = linkList.splice(indexDeleted--, 1);
-    console.log(deletedlink);
-    alert(`You just deleted ${deletedlink[i].title}`);
+    alert(`You deleted ${deletedlink[indexDeleted].title}\n ${deletedlink[indexDeleted].Url}\n ${deletedlink[indexDeleted].author}`);
+
 }
 while (menuOption !== 0) {
     if (menuOption === 1) {
