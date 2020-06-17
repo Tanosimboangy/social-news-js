@@ -30,16 +30,12 @@ let menuLinks = `Choose an option:
 let menuOption = prompt(menuLinks);
 
 while (menuOption !== 0) {
-    switch (linkList) {
-        case 1:
-            for (let i = 0; i < linkList.lenghth; i++) {
-                let menuString = (`Title: ${linkList[i].title} \n URL : ${linkList[i].URL} \n Author : ${linkList[i].author}`);
-                alert (menuString);
-            }
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
+    if (linkList === 1) {
+        for (let i = 0; i < linkList.lenghth; i++) {
+            let menuString = (`Title: ${linkList[i].title} \n URL : ${linkList[i].URL} \n Author : ${linkList[i].author}`);
+            alert (menuString);
+        }
+    } else if (linkList === 2) {
+
     }
 }
