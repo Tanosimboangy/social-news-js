@@ -41,6 +41,10 @@ const addingLink = () => {
     const newLinkURL = prompt("Enter the URL of the new link");
     const newLinkauthor = prompt("Enter the author of the new link");
 
+    if (!newLinkURL.startsWith("http://") && !newLinkURL.startsWith("https://")) {
+        newLinkURL = `https://${newLinkURL}`;
+        }
+
     let newObject = {
         title: newLinkTitle,
         Url: newLinkURL,
@@ -49,20 +53,20 @@ const addingLink = () => {
 
     linkList.push(newObject);
 }
-const deletedLink = () => {
-    let indexDeleted = Number(
-        prompt(`Enter the lilnk's index to delete (1 to ${linkList.length})`));
-    let deletedlink = linkList.splice(indexDeleted--, 1);
-    alert(`You deleted ${deletedlink[indexDeleted].title}\n ${deletedlink[indexDeleted].Url}\n ${deletedlink[indexDeleted].author}`);
-
+const deleteLink = () => {
+    let indexDelete = Number(
+        prompt(`Enter the index of the link to be removed(Between 1 and ${linkList.length})`));
+    let deletelink = linkList.splice(indexDelete--, 1);
+    alert(`You deleted ${deletelink[indexDelete].title}\n ${deletelink[indexDelete].Url}\n ${deletelink[indexDelete].author}`);
 }
+
 while (menuOption !== 0) {
     if (menuOption === 1) {
         listOptions();
     } else if (menuOption === 2) {
         addingLink();
     } else if (menuOption === 3) {
-        deletedLink();
+        deleteLink();
     }
     menuOption = Number(prompt(menuLinks));
 }
