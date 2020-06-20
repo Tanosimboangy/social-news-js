@@ -56,7 +56,6 @@ const addingLink = () => {
         Url: newLinkURL,
         author: newLinkauthor
     }
-
     linkList.push(newObject);
     return;
 };
@@ -78,7 +77,7 @@ while (menuOption !== 0) {
     } else if (menuOption === 3) {
         deleteLink();
     } else {
-        alert("ErrorPlease enter appropriate number, between 1 to 3");
+        alert("Error, please enter appropriate number, between 1 to 3");
     }
     menuOption = Number(prompt(menuLinks));
 }
