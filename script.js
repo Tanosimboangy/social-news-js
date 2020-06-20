@@ -77,6 +77,8 @@ while (menuOption !== 0) {
         addingLink();
     } else if (menuOption === 3) {
         deleteLink();
+    } else {
+        alert("ErrorPlease enter appropriate number, between 1 to 3");
     }
     menuOption = Number(prompt(menuLinks));
 }
